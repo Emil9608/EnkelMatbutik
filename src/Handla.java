@@ -4,14 +4,14 @@ public class Handla {
     static int breadTotal = 0;
     static int eggTotal = 0;
     static int butterTotal = 0;
-    static int TotalAntalProdukter = milkTotal + breadTotal +eggTotal +butterTotal;
-    Scanner scan = new Scanner(System.in);
+
+   static Scanner scan = new Scanner(System.in);
     static void handla(Scanner scan) {
         boolean handlaMer = true;
 
         while (handlaMer) {
         Produkter.visaProdukter();
-        System.out.println("Välj produktnummer att köpa 1-4, 0 för att avsluta.");
+        System.out.println("Välj produktnummer att köpa 1-4, 0 för att gå tillbaka till menyn.");
         int val = scan.nextInt();
 
         switch (val) {
@@ -40,11 +40,44 @@ public class Handla {
 
             }
         }
-        System.out.println("Du har valt att handla: " +TotalAntalProdukter);
     }
-}
-//System.out.println("--- Produkter ---");
-//            System.out.println("Ägg || " + egg + " Kr");
-//            System.out.println("Mjölk || " + milk + " Kr");
-//            System.out.println("Bröd || " + bread + " Kr");
-//            System.out.println("Smör || " + butter + " Kr");
+
+    static void handlaTotal() {
+        /* int milk = 15;
+        int bread = 25;
+        int egg = 30;
+        int butter = 45; */
+
+        int milkPrice = 15*milkTotal;
+        int breadPrice = 25*breadTotal;
+        int eggPrice = 30*eggTotal;
+        int butterPrice = 45*butterTotal;
+
+        System.out.println("Du har valt att handla: \n"
+                + eggTotal + " st äggpaket, " +eggPrice+ " Kr\n"
+                + milkTotal + " st mjölkpaket, " +milkPrice+ " Kr\n"
+                + breadTotal + " st brödpaket, " +breadPrice+  " Kr\n"
+                + butterTotal + " st smörpaket, " +butterPrice+ " Kr\n");
+    }
+
+    static void varukorg() {
+         int milkPrice = 15*milkTotal;
+         int breadPrice = 25*breadTotal;
+         int eggPrice = 30*eggTotal;
+         int butterPrice = 45*butterTotal;
+         int totalPrice = milkPrice+breadPrice+eggPrice+butterPrice;
+
+        if (milkTotal < 1 && breadTotal < 1 && eggTotal < 1 && butterTotal < 1) {
+            System.out.println("Din varukorg är tom");
+        } else {
+            System.out.println("Du har valt att handla: \n"
+                    + eggTotal + " st äggpaket, " +eggPrice+ " Kr\n"
+                    + milkTotal + " st mjölkpaket, " +milkPrice+ " Kr\n"
+                    + breadTotal + " st brödpaket, " +breadPrice+  " Kr\n"
+                    + butterTotal + " st smörpaket, " +butterPrice+ " Kr\n");
+            System.out.println("Ditt total pris blir " +totalPrice+ " Kr");
+            System.out.println("Tryck enter för att gå vidare: ");
+            scan.nextLine();
+            }
+        }
+    }

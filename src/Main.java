@@ -7,7 +7,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         boolean running = true;
-        int varukorg = 0;
         while (running) {
             storeMenu.showMenu();
             System.out.println("Välj ett alternativ");
@@ -26,16 +25,18 @@ public class Main {
                     break;
 
                 case 3:
+                    Handla.handlaTotal();
                     break;
 
                 case 4:
-                     running = false;
-                     System.out.println("Programmet avslutas...");
+                    Handla.varukorg();
                     break;
 
+                case 5:
+                    running = false;
+                    System.out.println("Programmet avslutas...");
+                    break;
             }
-
         }
-
     }
 }

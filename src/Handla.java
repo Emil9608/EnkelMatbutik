@@ -5,8 +5,8 @@ public class Handla {
     static int eggTotal = 0;
     static int butterTotal = 0;
 
-   static Scanner scan = new Scanner(System.in);
-    static void handla(Scanner scan) {
+    static Scanner scan = new Scanner(System.in);
+    static void handla() {
         boolean handlaMer = true;
 
         while (handlaMer) {
@@ -53,7 +53,7 @@ public class Handla {
         int eggPrice = 30*eggTotal;
         int butterPrice = 45*butterTotal;
 
-        System.out.println("Du har valt att handla: \n"
+        System.out.println("---Varukorg--- \n"
                 + eggTotal + " st äggpaket, " +eggPrice+ " Kr\n"
                 + milkTotal + " st mjölkpaket, " +milkPrice+ " Kr\n"
                 + breadTotal + " st brödpaket, " +breadPrice+  " Kr\n"
@@ -68,13 +68,14 @@ public class Handla {
          int totalPrice = milkPrice+breadPrice+eggPrice+butterPrice;
 
         if (milkTotal < 1 && breadTotal < 1 && eggTotal < 1 && butterTotal < 1) {
-            System.out.println("Din varukorg är tom");
+            System.out.println("Lägg till varor först");
         } else {
             System.out.println("Du har valt att handla: \n"
                     + eggTotal + " st äggpaket, " +eggPrice+ " Kr\n"
                     + milkTotal + " st mjölkpaket, " +milkPrice+ " Kr\n"
                     + breadTotal + " st brödpaket, " +breadPrice+  " Kr\n"
                     + butterTotal + " st smörpaket, " +butterPrice+ " Kr\n");
+
             System.out.println("Ditt total pris blir " +totalPrice+ " Kr");
             System.out.println("Tryck enter för att gå vidare: ");
             scan.nextLine();

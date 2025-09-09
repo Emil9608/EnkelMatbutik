@@ -16,26 +16,38 @@ public class Handla {
 
         switch (val) {
             case 1:
-                eggTotal++;
-                System.out.println("Du la till ett egg i varukorgen");
+                System.out.println("Hur många paket ska du handla?");
+                eggTotal = scan.nextInt();
+                System.out.println("Du la till " + eggTotal + " i varukorgen");
+                System.out.println();
+                System.out.println();
                 break;
             case 2:
-                milkTotal++;
-                System.out.println("Du la till ett paket mjölk i varukorgen");
+                System.out.println("Hur många paket ska du handla?");
+                milkTotal = scan.nextInt();
+                System.out.println("Du la till " + milkTotal + " paket mjölk i varukorgen");
+                System.out.println();
+                System.out.println();
                 break;
             case 3:
-                breadTotal++;
-                System.out.println("Du la till en påse bröd i varukorgen");
+                System.out.println("Hur många limpor ska du handla?");
+                breadTotal = scan.nextInt();
+                System.out.println("Du la till " + breadTotal + " limpor i varukorgen");
+                System.out.println();
+                System.out.println();
                 break;
             case 4:
-                butterTotal++;
-                System.out.println("Du la till ett paket smör i varukorgen");
+                System.out.println("Hur många paket ska du handla?");
+                butterTotal = scan.nextInt();
+                System.out.println("Du la till " + butterTotal + " paket smör i varukorgen");
+                System.out.println();
+                System.out.println();
                 break;
             case 0:
                 handlaMer = false;
                 break;
             default:
-                System.out.println("Du valde ett alternativ som inte är tillgänligt! ");
+                System.out.println("Du valde ett alternativ som inte är tillgängligt!");
                 break;
 
             }
@@ -61,6 +73,7 @@ public class Handla {
     }
 
     static void varukorg() {
+
          int milkPrice = 15*milkTotal;
          int breadPrice = 25*breadTotal;
          int eggPrice = 30*eggTotal;
@@ -68,17 +81,31 @@ public class Handla {
          int totalPrice = milkPrice+breadPrice+eggPrice+butterPrice;
 
         if (milkTotal < 1 && breadTotal < 1 && eggTotal < 1 && butterTotal < 1) {
-            System.out.println("Lägg till varor först");
-        } else {
-            System.out.println("Du har valt att handla: \n"
-                    + eggTotal + " st äggpaket, " +eggPrice+ " Kr\n"
-                    + milkTotal + " st mjölkpaket, " +milkPrice+ " Kr\n"
-                    + breadTotal + " st brödpaket, " +breadPrice+  " Kr\n"
-                    + butterTotal + " st smörpaket, " +butterPrice+ " Kr\n");
+            System.out.println("Lägg till varor först, klicka Enter för att gå tillbaks till menyn...");
+        }  else {
 
-            System.out.println("Ditt total pris blir " +totalPrice+ " Kr");
-            System.out.println("Tryck enter för att gå vidare: ");
-            scan.nextLine();
+            System.out.println("---Varukorg--- \n"
+                    + eggTotal + " st äggpaket, " + eggPrice + " Kr\n"
+                    + milkTotal + " st mjölkpaket, " + milkPrice + " Kr\n"
+                    + breadTotal + " st brödpaket, " + breadPrice + " Kr\n"
+                    + butterTotal + " st smörpaket, " + butterPrice + " Kr\n");
+
+            String Utcheckning = "Ja";
+            System.out.println("Vill du gå vidare med ditt köp? ja / nej?: ");
+            String utcheckningsVal = scan.next();
+
+            if (utcheckningsVal.equalsIgnoreCase(Utcheckning)) {
+                System.out.println("Tack för ditt köp :) ");
+                System.out.println("Ditt totala pris blir " + totalPrice + " Kr");
+                System.out.println("Tryck Enter för att gå tillbaka till menyn");
+                scan.nextLine();
             }
         }
+                /* else {
+                        System.out.println("Fortsätta handla i menyn. ");
+                } */
+        }
+
     }
+
+

@@ -1,48 +1,65 @@
-import java.nio.channels.ScatteringByteChannel;
 import java.util.Scanner;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
 
         boolean running = true;
 
-          while (running) {
-              try {
-              storeMenu.showMenu();
-              System.out.println("Välj ett alternativ");
-              int val = scan.nextInt();
+        //Olika objekt för klasserna.
+        Scanner scan = new Scanner(System.in);
 
-              switch (val) {
-                  case 1:
-                      Produkter.visaProdukter();
-                      System.out.println("Tryck på enter för att gå tillbaka till menyn...");
-                      scan.nextLine();
-                      scan.nextLine();
-                      break;
 
-                  case 2:
-                      Handla.handla();
-                      break;
+        MatProdukter mp = new MatProdukter(15,"milk",24 );
+        MatProdukter mp2 = new MatProdukter(30,"egg",100000 );
+        MatProdukter mp3 = new MatProdukter(45,"Smör",500 );
+        MatProdukter mp4 = new MatProdukter(25,"Bröd",50 );
+        try {
+        while (running) {
 
-                  case 3:
-                      Handla.handlaTotal();
-                      break;
+                storeMenu.showMenu();
+                System.out.println("Välj ett alternativ");
+                int val = scan.nextInt();
 
-                  case 4:
-                      Handla.varukorg();
-                      break;
+                switch (val) {
+                    case 1:
+                        Produkter.visaProdukter();
+                        System.out.println("Tryck på enter för att gå tillbaka till menyn...");
+                        scan.nextLine();
+                        scan.nextLine();
+                        break;
 
-                  case 5:
-                      running = false;
-                      System.out.println("Programmet avslutas...");
-                      break;
-              }
-              }  catch(Exception felinput) {
-                 System.out.println("Du måste skriva in med siffror inte bokstäver!. ");
-             }
-          }
+                    case 2:
+                        Handla.handla();
+                        break;
+
+                    case 3:
+                        Handla.varukorg();
+                        scan.nextLine();
+                        scan.nextLine();
+                        break;
+
+                    case 4:
+                        running = false;
+                        System.out.println("Programmet avslutas...");
+                        break;
+
+                    case 5:
+                        mp.MatProdukterStock();
+                        mp2.MatProdukterStock();
+                        mp3.MatProdukterStock();
+                        mp4.MatProdukterStock();
+                        break;
+
+                    default:
+                        System.out.println("Använd dig av alternativ 1-4!");
+                        break;
+                }
+            }
+        }
+                catch (Exception felinput) {
+                System.out.println("Du måste skriva in med siffror inte bokstäver!");
+            }
+        }
     }
-}

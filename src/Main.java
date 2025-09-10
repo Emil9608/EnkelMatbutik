@@ -10,7 +10,7 @@ public class Main {
         //Olika objekt för klasserna.
         Scanner scan = new Scanner(System.in);
 
-
+        Handla handlaObjekt = new Handla();
         MatProdukter mp = new MatProdukter(15,"milk",24 );
         MatProdukter mp2 = new MatProdukter(30,"egg",100000 );
         MatProdukter mp3 = new MatProdukter(45,"Smör",500 );
@@ -18,7 +18,7 @@ public class Main {
         try {
         while (running) {
 
-                storeMenu.showMenu();
+                showMenu();
                 System.out.println("Välj ett alternativ");
                 int val = scan.nextInt();
 
@@ -31,7 +31,7 @@ public class Main {
                         break;
 
                     case 2:
-                        Handla.handla();
+                        handlaObjekt.handla();
                         break;
 
                     case 3:
@@ -62,4 +62,13 @@ public class Main {
                 System.out.println("Du måste skriva in med siffror inte bokstäver!");
             }
         }
+    // Statiska metoder
+        static void showMenu() {
+        System.out.println("\n");
+        System.out.println("---Menu---");
+        System.out.println("1. Visa produkter och priser");
+        System.out.println("2. Handla");
+        System.out.println("3. Visa varukorg");
+        System.out.println("4. Avsluta");
     }
+}

@@ -6,51 +6,54 @@ public class Handla {
     static int butterTotal = 0;
 
     static Scanner scan = new Scanner(System.in);
-    static void handla() {
+     void handla() {                //static
         boolean handlaMer = true;
 
         while (handlaMer) {
         Produkter.visaProdukter();
         System.out.println("Välj produktnummer att köpa 1-4, 0 för att gå tillbaka till menyn.");
         int val = scan.nextInt();
+       /* if (val  0){
+            System.out.println("Du får inte skriva in ett negativt värde");
 
-        switch (val) {
-            case 1:
-                System.out.println("Hur många paket ska du handla?");
-                eggTotal = scan.nextInt();
-                System.out.println("Du la till " + eggTotal + " i varukorgen");
-                System.out.println();
-                System.out.println();
-                break;
-            case 2:
-                System.out.println("Hur många paket ska du handla?");
-                milkTotal = scan.nextInt();
-                System.out.println("Du la till " + milkTotal + " paket mjölk i varukorgen");
-                System.out.println();
-                System.out.println();
-                break;
-            case 3:
-                System.out.println("Hur många limpor ska du handla?");
-                breadTotal = scan.nextInt();
-                System.out.println("Du la till " + breadTotal + " limpor i varukorgen");
-                System.out.println();
-                System.out.println();
-                break;
-            case 4:
-                System.out.println("Hur många paket ska du handla?");
-                butterTotal = scan.nextInt();
-                System.out.println("Du la till " + butterTotal + " paket smör i varukorgen");
-                System.out.println();
-                System.out.println();
-                break;
-            case 0:
-                handlaMer = false;
-                break;
-            default:
-                System.out.println("Du valde ett alternativ som inte är tillgängligt!");
-                break;
-
+        else { */
+            switch (val) {
+                case 1:
+                    System.out.println("Hur många paket ska du handla?");
+                    eggTotal = scan.nextInt();
+                    System.out.println("Du la till " + eggTotal + " i varukorgen");
+                    System.out.println();
+                    System.out.println();
+                    break;
+                case 2:
+                    System.out.println("Hur många paket ska du handla?");
+                    milkTotal = scan.nextInt();
+                    System.out.println("Du la till " + milkTotal + " paket mjölk i varukorgen");
+                    System.out.println();
+                    System.out.println();
+                    break;
+                case 3:
+                    System.out.println("Hur många limpor ska du handla?");
+                    breadTotal = scan.nextInt();
+                    System.out.println("Du la till " + breadTotal + " limpor i varukorgen");
+                    System.out.println();
+                    System.out.println();
+                    break;
+                case 4:
+                    System.out.println("Hur många paket ska du handla?");
+                    butterTotal = scan.nextInt();
+                    System.out.println("Du la till " + butterTotal + " paket smör i varukorgen");
+                    System.out.println();
+                    System.out.println();
+                    break;
+                case 0:
+                    handlaMer = false;
+                    break;
+                default:
+                    System.out.println("Du valde ett alternativ som inte är tillgängligt!");
+                    break;
             }
+
         }
     }
 

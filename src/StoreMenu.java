@@ -1,4 +1,4 @@
-public class storeMenu {
+public class StoreMenu {
     static void showMenu() {
         System.out.println("\n");
         System.out.println("---Menu---");
